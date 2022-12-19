@@ -1,0 +1,12 @@
+#
+# backend
+#
+terraform {
+  backend "s3" {
+    bucket         = "terraform-state-data-engineering"
+    key            = "webcreek/dev-eks/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock-eks-dev"
+  }
+}
+#
